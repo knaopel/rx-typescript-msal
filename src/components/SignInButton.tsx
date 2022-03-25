@@ -22,7 +22,7 @@ export const SignInButton: React.FC = () => {
     <DropdownButton
       variant="secondary"
       className="ml-auto"
-      drop="left"
+      drop='start'
       title="Sign In"
     >
       <Dropdown.Item as="button" onClick={() => handleLogin("popup")}>

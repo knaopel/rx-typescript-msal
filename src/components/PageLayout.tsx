@@ -15,11 +15,9 @@ export const PageLayout: React.FC = (props) => {
         </a>
         {isAuthenticated ? <SignOutButton /> : <SignInButton />}
       </Navbar>
-      <h5>
-        <center>
-          Welcome to the Microsoft Authentication Library for Javascript - React
-          Quickstart
-        </center>
+      <h5 style={{ textAlign: 'center' }}>
+        Welcome to the Microsoft Authentication Library for Javascript - React
+        Quickstart
       </h5>
       {props.children}
     </>

@@ -5,9 +5,10 @@ import {
 } from "@azure/msal-react";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { loginReqest } from "./authConfig";
+import { loginRequest } from "./authConfig";
 import { callMsGraph } from "./graph";
-import { PageLayout } from "./components";
+import { PageLayout, ProfileData } from "./components";
+
 import "./styles/App.css";
 
 const ProfileContent: React.FC = () => {
@@ -17,7 +18,7 @@ const ProfileContent: React.FC = () => {
   const requestForfileData = () => {
     instance
       .acquireTokenSilent({
-        ...loginReqest,
+        ...loginRequest,
         account: accounts[0]
       })
       .then((response) => {
@@ -31,7 +32,7 @@ const ProfileContent: React.FC = () => {
     <>
       <h5 className="card-title">Welcome {accounts[0].name}</h5>
       {graphData ? (
-        <div>ProfileData here</div>
+        <ProfileData graphData={graphData} />
       ) : (
         <Button variant="secondary" onClick={requestForfileData}>
           Request Profile Information

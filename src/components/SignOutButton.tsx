@@ -22,7 +22,7 @@ export const SignOutButton: React.FC = () => {
     <DropdownButton
       variant="secondary"
       className="ml-auto"
-      drop="left"
+      drop="start"
       title="Sign Out"
     >
       <Dropdown.Item as="button" onClick={() => handleLogout("popup")}>

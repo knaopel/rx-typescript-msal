@@ -1,6 +1,6 @@
 import { graphConfig } from "./authConfig";
 
-export const callMsGraph = async (accessToken) => {
+export const callMsGraph = async (accessToken: string) => {
   const headers = new Headers();
   const bearer = `Bearer ${accessToken}`;
 
